@@ -170,13 +170,13 @@ init_mathjax();
 
         <meta name="author" content="40523207" />
         <meta name="keywords" content="使用導引" />
-        <meta name="description" content="2017fallcp 期末考週 W15 https://github.com/s40523219/2016fallcp_hw/wiki/%E4%B8%8A%E8%AA%B2%E7%AD%86%E8%A8%98(%E4%B8%8B) Q: leo 檔案 &amp; setting 節點用法? A: 結合複製指令，選擇一個或多個物件同步進行相同指令。 Q: 如何複製或搬運 leo 節點? 有哪些快捷鍵? A: Ctrl + i = 新增節點 Ctrl + u = 節點上移 Ctrl + d = 節點下移 Ctrl + l = 節點左移 ..." />
+        <meta name="description" content="2017fallcp 期末考週 W15 2017-01-09_13-36-34 from cowwind on Vimeo. Q: leo 檔案 &amp; setting 節點用法? A: 結合複製指令，選擇一個或多個物件同步進行相同指令。 Q: 如何複製或搬運 leo 節點? 有哪些快捷鍵? A: Ctrl + i = 新增節點 Ctrl + u = 節點上移 Ctrl + d = 節點下移 Ctrl + l = 節點左移 Ctrl + r = 節點右移 Q: @path 節點指令用法 A: 可在節點指令後註記標題，表示節點的路徑關係。 Q: @edit &amp; @auto節點指令用法 A: 兩者皆為導入外部檔案&#34;標題指令&#34;，建立起Leo內部與外部檔案的關係 ..." />
 
         <meta property="og:site_name" content="2016Fall CPA 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="2016fallcp 期末考週"/>
         <meta property="og:url" content="./2016fallcp-qi-mo-kao-zhou.html"/>
-        <meta property="og:description" content="2017fallcp 期末考週 W15 https://github.com/s40523219/2016fallcp_hw/wiki/%E4%B8%8A%E8%AA%B2%E7%AD%86%E8%A8%98(%E4%B8%8B) Q: leo 檔案 &amp; setting 節點用法? A: 結合複製指令，選擇一個或多個物件同步進行相同指令。 Q: 如何複製或搬運 leo 節點? 有哪些快捷鍵? A: Ctrl + i = 新增節點 Ctrl + u = 節點上移 Ctrl + d = 節點下移 Ctrl + l = 節點左移 ..."/>
+        <meta property="og:description" content="2017fallcp 期末考週 W15 2017-01-09_13-36-34 from cowwind on Vimeo. Q: leo 檔案 &amp; setting 節點用法? A: 結合複製指令，選擇一個或多個物件同步進行相同指令。 Q: 如何複製或搬運 leo 節點? 有哪些快捷鍵? A: Ctrl + i = 新增節點 Ctrl + u = 節點上移 Ctrl + d = 節點下移 Ctrl + l = 節點左移 Ctrl + r = 節點右移 Q: @path 節點指令用法 A: 可在節點指令後註記標題，表示節點的路徑關係。 Q: @edit &amp; @auto節點指令用法 A: 兩者皆為導入外部檔案&#34;標題指令&#34;，建立起Leo內部與外部檔案的關係 ..."/>
         <meta property="article:published_time" content="2017-01-09" />
             <meta property="article:section" content="Misc" />
             <meta property="article:tag" content="使用導引" />
@@ -317,7 +317,8 @@ init_mathjax();
                 </div>
                 <p>2017fallcp 期末考週</p>
 <p>W15
-https://github.com/s40523219/2016fallcp_hw/wiki/%E4%B8%8A%E8%AA%B2%E7%AD%86%E8%A8%98(%E4%B8%8B)
+<iframe src="https://player.vimeo.com/video/198635771" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/198635771">2017-01-09_13-36-34</a> from <a href="https://vimeo.com/user58510993">cowwind</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 Q: leo 檔案 &amp; setting 節點用法?</p>
 <p>A: 結合複製指令，選擇一個或多個物件同步進行相同指令。</p>
 <p>Q: 如何複製或搬運 leo 節點? 有哪些快捷鍵?</p>
@@ -335,6 +336,60 @@ Ctrl + r = 節點右移</p>
 https://vimeo.com/196234529
 https://vimeo.com/196240950</p>
 <p>W16
+<iframe src="https://player.vimeo.com/video/198636353" width="640" height="347" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/198636353">2017-01-09_13-51-36</a> from <a href="https://vimeo.com/user58510993">cowwind</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
+<!-- 導入 Brython 標準程式庫 -->
+
+<script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
+</script>
+
+<!-- 啟動 Brython -->
+
+<script>
+window.onload=function(){
+brython(1);
+}
+</script>
+
+<!-- 以下實際利用  Brython  -->
+
+<div id="id3"></div>
+
+<script type="text/python3">
+from browser import document
+from browser import html
+import random
+
+id3 = document["id3"]
+def guess(ev):
+    # 清除 id3 中的內容
+    id3.clear()
+    id3 <= "開始玩猜數字遊戲" + html.BR()
+    標準答案 = random.randint(1, 30)
+    你猜的數字 = int(input("請輸入您所猜 1~30 間的整數:"))
+    猜測次數 = 1
+    while 標準答案 != 你猜的數字:
+        if 標準答案 < 你猜的數字:
+            print("太大了，再猜一次 :)加油")
+            # 清除 id3 中的內容
+            id3.clear()
+            id3 <= "猜第" + str(猜測次數) + "次, 太大了，再猜一次 :)加油" + html.BR()
+        else:
+            print("太小了，再猜一次 :)加油")
+            # 清除 id3 中的內容
+            id3.clear()
+            id3 <= "猜第" + str(猜測次數) + "次, 太小了，再猜一次 :)加油" + html.BR()
+        你猜的數字 = int(input("請輸入您所猜 1~30 間的整數:"))
+        猜測次數 += 1
+
+    print("猜對了！總共猜了", 猜測次數, "次")
+    id3 <= "猜對了！答案為" + str(標準答案) + ", 總共猜了" + str(猜測次數) + "次"
+
+document["but3"].bind("click", guess)
+</script>
+
+<p><button id="but3">玩猜數字遊戲</button>
 用leo猜數字
 https://vimeo.com/197078481
 https://vimeo.com/197078568
